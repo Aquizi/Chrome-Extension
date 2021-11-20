@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 400px;
+    min-width: 460px;
 }
 
 input {
@@ -24,7 +24,12 @@ button {
     font-size: 16px;
     background-color: #5f9341;
     color: white;
-    border: none;
+    border: 1px solid #5f9341;
+}
+
+#delete-btn {
+    background-color: white;
+    color: #5f9341;
 }
 
 ul {
