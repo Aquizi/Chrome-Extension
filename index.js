@@ -13,6 +13,11 @@ if (leadsFromLocalStorage) {
     render(myLeads)
 }
 
+inputEl.addEventListener("focus", function() {
+    inputEl.value = "https://"
+})
+
+
 tabBtn.addEventListener("click", function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     myLeads.push(tabs[0].url)
@@ -28,19 +33,10 @@ deleteBtn.addEventListener("dblclick", function() {
 })
 
 inputBtn.addEventListener("click", function() {
-    //  add input validation
     myLeads.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myLeads)
-})
-
-inputEl.addEventListener("focus", function() {
-    inputEl.value = "https://"
-})
-
-inputEl.addEventListener("blur", function() {
-    inputEl.value = ""
 })
 
 function render(leads) {
